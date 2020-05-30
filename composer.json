@@ -90,7 +90,7 @@
             "drupal/core": "-p2"
         },
         "patches": {
-            "login_history": {
+            "drupal/login_history": {
                 "Automated Drupal Rector fixes": "https://www.drupal.org/files/issues/2020-05-23/login_history.1.x-dev.rector.patch"
             }
         }
