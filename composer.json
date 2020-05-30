@@ -90,6 +90,9 @@
             "drupal/core": "-p2"
         },
         "patches": {
+            "drupal/core": {
+                "Password reset link should immediately detect if the link is expired": "https://www.drupal.org/files/issues/2020-05-21/3059158-42.patch"
+            },
             "drupal/login_history": {
                 "Drupal 9 Deprecated Code Report for Login History module":"https://www.drupal.org/files/issues/2019-04-24/drupal_9_deprecated_code-3042861-2.patch",
                 "Add the 'core_version_requirement' key in info.yml": "https://www.drupal.org/files/issues/2020-01-16/core_verison_req-3106773-%233.patch"
