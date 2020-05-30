@@ -1,0 +1,73 @@
+diff --git a/src/Controller/LoginHistoryController.php b/src/Controller/LoginHistoryController.php
+index ee5c463..bf5b20e 100644
+--- a/src/Controller/LoginHistoryController.php
++++ b/src/Controller/LoginHistoryController.php
+@@ -1,10 +1,5 @@
+ <?php
+ 
+-/**
+- * @file
+- * Contains \Drupal\login_history\Controller\LoginHistoryController.
+- */
+-
+ namespace Drupal\login_history\Controller;
+ 
+ use Drupal\Core\Access\AccessResult;
+@@ -31,8 +26,8 @@ class LoginHistoryController extends ControllerBase {
+    * Constructs a \Drupal\login_history\Controller\LoginHistoryController object.
+    *
+    * @param \Drupal\Core\Datetime\DateFormatterInterface $date_formatter
+-   *    The date formatter service.
+-   *  @param \Drupal\Core\Database\Connection $database
++   *   The date formatter service.
++   * @param \Drupal\Core\Database\Connection $database
+    *   The database connection.
+    */
+   public function __construct(DateFormatterInterface $date_formatter, Connection $database) {
+@@ -102,7 +97,7 @@ class LoginHistoryController extends ControllerBase {
+    * @return array
+    *   A table render array.
+    */
+-  function generateReportTable(array $history, array $header) {
++  public function generateReportTable(array $history, array $header) {
+     // Load all users first.
+     $uids = [];
+     foreach ($history as $entry) {
+diff --git a/src/Plugin/Block/LastLoginBlock.php b/src/Plugin/Block/LastLoginBlock.php
+index 350996f..8e794c9 100644
+--- a/src/Plugin/Block/LastLoginBlock.php
++++ b/src/Plugin/Block/LastLoginBlock.php
+@@ -1,10 +1,5 @@
+ <?php
+ 
+-/**
+- * @file
+- * Contains \Drupal\login_history\Plugin\Block\LastLoginBlock.
+- */
+-
+ namespace Drupal\login_history\Plugin\Block;
+ 
+ use Drupal\Core\Access\AccessResult;
+diff --git a/tests/src/Functional/LoginHistoryTest.php b/tests/src/Functional/LoginHistoryTest.php
+index cfd4944..865fe25 100644
+--- a/tests/src/Functional/LoginHistoryTest.php
++++ b/tests/src/Functional/LoginHistoryTest.php
+@@ -1,10 +1,5 @@
+ <?php
+ 
+-/**
+- * @file
+- * Definition of Drupal\login_history\Tests\LoginHistoryTest.
+- */
+-
+ namespace Drupal\Tests\login_history\Functional;
+ 
+ use Drupal\Tests\BrowserTestBase;
+@@ -14,7 +9,6 @@ use Drupal\Tests\BrowserTestBase;
+  *
+  * @group Other
+  */
+-
+ class LoginHistoryTest extends BrowserTestBase {
+ 
+   /**
