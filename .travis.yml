@@ -18,7 +18,7 @@ services:
 
 env:
   global:
-    - MODULE=login_history
+    - MODULE="login_history"
     - COMPOSER_MEMORY_LIMIT=-1
 #  matrix:
 #    - DRUPAL_CORE=8.8.x DRUSH_VER=10.0
@@ -65,7 +65,7 @@ script:
   - $PROJECT_ROOT/vendor/bin/drush runserver --default-server=builtin 8888 > /dev/null &
 
   # Run the PHPUnit tests.
-  - $PROJECT_ROOT/vendor/bin/phpunit -c $DRUPAL_ROOT/core/phpunit.xml.dist --verbose --group=$MODULE ./web/modules/contrib/$MODULE
+  - $PROJECT_ROOT/vendor/bin/phpunit -c $DRUPAL_ROOT/core/phpunit.xml.dist --verbose --group=$MODULE $DRUPAL_ROOT/modules/contrib/$MODULE
 
   # Run the deprecation checks.
   - $PROJECT_ROOT/vendor/bin/drupal-check $DRUPAL_ROOT/modules/contrib
